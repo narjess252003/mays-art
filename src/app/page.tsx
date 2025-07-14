@@ -1,8 +1,9 @@
 "use client"
 import Navbar from "@/components/Navbar"
-import { Leaf, Star, Heart, Coffee, Sparkles, Gift } from "lucide-react"
+import { Star, Heart, Gift } from "lucide-react"
 import { SessionProvider } from "next-auth/react"
 import Link from "next/link"
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -51,7 +52,7 @@ export default function Home() {
 </div>
 
   <div className="lg:w-1/2 w-full max-w-md relative group -mt-10 lg:mt-1">
-      <img
+      <Image
         src="/art.jpg"
         alt="Ceramic mugs collection"
         className="w-full h-130 object-cover rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-500"
@@ -97,49 +98,49 @@ export default function Home() {
   {[
     {
       name: "CLASSIC",
-      price: "$𝟸𝟺.𝟶𝟶",
+      price: "𝟸𝟺.𝟶𝟶dt",
       image: "1.jpg",
       color: "from-amber-50 to-orange-50",
     },
     {
       name: "ARTIST SERIES",
-      price: "$𝟸𝟾.𝟶𝟶",
+      price: "𝟸𝟾.𝟶𝟶dt",
       image: "2.jpg",
       color: "from-amber-50 to-orange-50",
     },
     {
       name: "PASTEL DREAMS",
-      price: "$𝟹𝟸.𝟶𝟶",
+      price: "𝟹𝟸.𝟶𝟶dt",
       image: "3.jpg",
       color: "from-amber-50 to-orange-50",
     },
     {
       name: "MINIMAL MODERN",
-      price: "$𝟸𝟼.𝟶𝟶",
+      price: "𝟸𝟼.𝟶𝟶dt",
       image: "4.jpg",
       color: "from-amber-50 to-orange-50",
     },
     {
       name: "VINTAGE CHARM",
-      price: "$𝟹𝟶.𝟶𝟶",
+      price: "𝟹𝟶.𝟶𝟶dt",
       image: "5.jpg",
       color: "from-amber-50 to-orange-50",
     },
     {
       name: "BOHEMIAN STYLE",
-      price: "$𝟸𝟿.𝟶𝟶",
+      price: "𝟸𝟿.𝟶𝟶dt",
       image: "6.jpg",
       color: "from-amber-50 to-orange-50",
     },
     {
       name: "EARTH TONES",
-      price: "$𝟸𝟽.𝟶𝟶",
+      price: "𝟸𝟽.𝟶𝟶dt",
       image: "7.jpg",
       color: "from-amber-50 to-orange-50",
     },
     {
       name: "OCEAN BREEZE",
-      price: "$𝟹𝟷.𝟶𝟶",
+      price: "𝟹𝟷.𝟶𝟶dt",
       image: "8.jpg",
       color: "from-amber-50 to-orange-50",
     },
@@ -149,7 +150,7 @@ export default function Home() {
         className={`bg-gradient-to-br ${product.color} p-6 rounded-3xl border border-stone-200 hover:shadow-2xl transition-all duration-500 hover:scale-105 hover:border-[#c97e6d]/30`}
       >
         <div className="relative overflow-hidden rounded-2xl mb-6">
-          <img
+          <Image
             src={`/${product.image}`}
             alt={product.name}
             className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
@@ -282,7 +283,7 @@ export default function Home() {
               <Star key={j} className="w-5 h-5 text-[#c97e6d] fill-current drop-shadow" />
             ))}
           </div>
-          <p className="text-[#4b3e34] text-base mb-6 leading-relaxed font-medium">"{review.review}"</p>
+          <p className="text-[#4b3e34] text-base mb-6 leading-relaxed font-medium">{review.review}</p>
           <p className="text-[#927e6c] text-sm font-semibold">— {review.name}</p>
           <div className="absolute -top-6 left-1/2 -translate-x-1/2 w-12 h-12 bg-white/70 rounded-full flex items-center justify-center shadow-md border border-[#e7d8c2]">
             <Heart className="w-6 h-6 text-[#c97e6d]" />
@@ -303,27 +304,7 @@ export default function Home() {
     `}
   </style>
 </section>
-      {/* Newsletter Section */}
-      <section className="py-20 bg-gradient-to-br from-stone-50 via-amber-50 to-orange-50 border-t border-stone-200">
-        <div className="max-w-4xl mx-auto px-4 text-center">
-          <div className="bg-white/60 backdrop-blur-sm rounded-3xl p-12 shadow-xl border border-white/50">
-            <h3 className="text-3xl font-light text-slate-800 mb-6">𝙹𝚘𝚒𝚗 𝚘𝚞𝚛 𝚌𝚛𝚊𝚏𝚝 𝚌𝚘𝚖𝚖𝚞𝚗𝚒𝚝𝚢</h3>
-            <p className="text-stone-600 mb-10 text-base leading-relaxed">
-              𝙶𝚎𝚝 𝚞𝚙𝚍𝚊𝚝𝚎𝚜 𝚘𝚗 𝚗𝚎𝚠 𝚌𝚘𝚕𝚕𝚎𝚌𝚝𝚒𝚘𝚗𝚜, 𝚎𝚡𝚌𝚕𝚞𝚜𝚒𝚟𝚎 𝚘𝚏𝚏𝚎𝚛𝚜 & 𝚋𝚎𝚑𝚒𝚗𝚍-𝚝𝚑𝚎-𝚜𝚌𝚎𝚗𝚎𝚜 𝚌𝚘𝚗𝚝𝚎𝚗𝚝
-            </p>
-            <div className="flex gap-4 max-w-lg mx-auto">
-              <input
-                type="email"
-                placeholder="𝚢𝚘𝚞𝚛 𝚎𝚖𝚊𝚒𝚕 𝚊𝚍𝚍𝚛𝚎𝚜𝚜"
-                className="flex-1 bg-white/80 border-2 border-stone-300 rounded-xl px-6 py-4 text-stone-700 placeholder-stone-500 focus:outline-none focus:border-[#c97e6d] transition-colors text-base backdrop-blur-sm"
-              />
-              <button className="bg-gradient-to-r from-slate-800 to-slate-700 text-slate-50 px-8 py-4 rounded-xl transition-all duration-300 hover:from-slate-700 hover:to-slate-600 text-base tracking-wide shadow-lg hover:shadow-xl hover:scale-105">
-                𝚂𝚄𝙱𝚂𝙲𝚁𝙸𝙱𝙴
-              </button>
-            </div>
-          </div>
-        </div>
-      </section>
+      
     </div>
   )
 }

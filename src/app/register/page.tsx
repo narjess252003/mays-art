@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation"
 import Link from "next/link"
 import Navbar from "@/components/Navbar"
 import { SessionProvider, signIn } from "next-auth/react"
+import Image from 'next/image';
 
 export default function Register() {
   const [name, setName] = useState("")
@@ -69,7 +70,7 @@ export default function Register() {
   className="w-full flex items-center justify-center gap-3 bg-white border border-[#e7d8c2] rounded-xl py-3 px-4 shadow hover:shadow-md transition-all font-semibold text-[#4b3e34] hover:bg-[#f7e9d2]"
   onClick={() => signIn("google")}
 >
-  <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5" />
+  <Image src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5" />
   Continue with Google
 </button>
   <div className="my-6 flex items-center">

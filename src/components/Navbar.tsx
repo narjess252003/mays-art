@@ -1,9 +1,10 @@
 "use client"
 
 import { useSession, signOut } from "next-auth/react"
-import { Search, Heart, ShoppingBag, Menu, X } from "lucide-react"
+import {  Heart, ShoppingBag, Menu, X } from "lucide-react"
 import { useState,useRef } from "react"
 import Link from "next/link"
+import Image from 'next/image';
 
 
 export default function Navbar() {
@@ -54,7 +55,7 @@ export default function Navbar() {
               aria-label="Account"
             >
               {session.user?.image ? (
-                <img src={session.user.image} alt="Profile" className="w-8 h-8 rounded-full object-cover" />
+                <Image src={session.user.image} alt="Profile" className="w-8 h-8 rounded-full object-cover" />
               ) : (
                 <svg className="w-6 h-6 text-[#c97e6d]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
                   <circle cx="12" cy="8" r="4" />
@@ -63,23 +64,23 @@ export default function Navbar() {
               )}
             </button>
             {showAccount && (
-  <div className="absolute right-0 mt-3 w-80 bg-white rounded-2xl shadow-2xl z-30 border border-[#e7d8c2] p-6 flex gap-5 items-center animate-fade-in">
-    <div className="w-16 h-16 rounded-full bg-[#f7e9d2] flex items-center justify-center border-2 border-[#e7d8c2] shadow">
+  <div className="absolute right-0 mt-4 w-96 bg-white rounded-3xl shadow-2xl z-40 border border-[#e7d8c2] p-8 flex gap-7 items-center animate-fade-in">
+    <div className="w-24 h-24 rounded-full bg-[#f7e9d2] flex items-center justify-center border-2 border-[#e7d8c2] shadow-lg">
       {session.user?.image ? (
-        <img src={session.user.image} alt="Profile" className="w-15 h-15 rounded-full object-cover" />
+        <Image src={session.user.image} alt="Profile" className="w-22 h-22 rounded-full object-cover" />
       ) : (
-        <svg className="w-10 h-10 text-[#c97e6d]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
+        <svg className="w-16 h-16 text-[#c97e6d]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
           <circle cx="12" cy="8" r="4" />
           <path d="M4 20c0-4 8-4 8-4s8 0 8 4" />
         </svg>
       )}
     </div>
     <div className="flex-1 min-w-0">
-      <div className="font-bold text-lg text-[#4b3e34] truncate">{session.user?.name || "Account"}</div>
-      <div className="text-xs text-[#bfae9b] break-all mb-3">{session.user?.email}</div>
+      <div className="font-extrabold text-2xl text-[#4b3e34] truncate mb-2">{session.user?.name || "Account"}</div>
+      <div className="text-sm text-[#bfae9b] break-all mb-6">{session.user?.email}</div>
       <button
         onClick={() => signOut({ callbackUrl: "/" })}
-        className="w-full bg-gradient-to-r from-[#c97e6d] to-[#4b3e34] text-white py-2 rounded-xl font-semibold shadow hover:scale-105 hover:shadow-xl transition-all text-base tracking-wide"
+        className="w-full bg-gradient-to-r from-[#c97e6d] to-[#4b3e34] text-white py-3 rounded-2xl font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all text-lg tracking-wide"
       >
         Log out
       </button>

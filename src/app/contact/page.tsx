@@ -1,6 +1,7 @@
 "use client"
 import Navbar from "@/components/Navbar"
 import { SessionProvider } from "next-auth/react"
+import Image from 'next/image';
 
 export default function Contact() {
   return (
@@ -49,7 +50,7 @@ export default function Contact() {
           {/* Picture and Contact Infos */}
           <div className="flex-1 flex flex-col items-center gap-8">
             {/* Picture */}
-            <img
+            <Image
               src="/profi.jpeg"
               alt="Mayssa"
               className="w-48 h-48 object-cover rounded-2xl shadow-lg border-4 border-white bg-[#f7e9d2]"

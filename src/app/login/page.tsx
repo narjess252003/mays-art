@@ -2,6 +2,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
+import Image from 'next/image';
 import Navbar from "@/components/Navbar"
 import { SessionProvider, signIn } from "next-auth/react"
 
@@ -58,12 +59,12 @@ export default function Login() {
   className="w-full flex items-center justify-center gap-3 bg-white border border-[#e7d8c2] rounded-xl py-3 px-4 shadow hover:shadow-md transition-all font-semibold text-[#4b3e34] hover:bg-[#f7e9d2]"
   onClick={() => signIn("google", { callbackUrl: "/" })}
 >
-  <img src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5" />
+  <Image src="https://www.svgrepo.com/show/475656/google-color.svg" alt="Google" className="w-5 h-5" />
   Continue with Google
 </button>
           </form>
           <div className="mt-6 text-center">
-            <span className="text-[#6d5c4d]">Don't have an account? </span>
+            <span className="text-[#6d5c4d]">Don t have an account? </span>
             <Link href="/register" className="text-[#c97e6d] font-semibold hover:underline">
               Create one
             </Link>
