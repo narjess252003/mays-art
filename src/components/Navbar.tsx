@@ -46,57 +46,26 @@ export default function Navbar() {
             </span>
           </button>
 
-          {session ? (
-          <div className="relative">
+          <div className="space-x-4">
+        {status === "loading" ? (
+          <span>Loading...</span>
+        ) : session?.user ? (
+          <>
+            <span>{session.user.name || session.user.email}</span>
             <button
-              ref={accountBtnRef}
-              className="w-9 h-9 rounded-full bg-[#f7e9d2] flex items-center justify-center border-2 border-[#e7d8c2]"
-              onClick={() => setShowAccount((v) => !v)}
-              aria-label="Account"
+              onClick={() => signOut({ callbackUrl: "/login" })}
+              className="bg-[#c97e6d] px-3 py-1 rounded hover:bg-[#a86251]"
             >
-              {session.user?.image ? (
-                <Image src={session.user.image} alt="Profile" className="w-8 h-8 rounded-full object-cover" />
-              ) : (
-                <svg className="w-6 h-6 text-[#c97e6d]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-                  <circle cx="12" cy="8" r="4" />
-                  <path d="M4 20c0-4 8-4 8-4s8 0 8 4" />
-                </svg>
-              )}
+              Logout
             </button>
-            {showAccount && (
-  <div className="absolute right-0 mt-4 w-96 bg-white rounded-3xl shadow-2xl z-40 border border-[#e7d8c2] p-8 flex gap-7 items-center animate-fade-in">
-    <div className="w-24 h-24 rounded-full bg-[#f7e9d2] flex items-center justify-center border-2 border-[#e7d8c2] shadow-lg">
-      {session.user?.image ? (
-        <Image src={session.user.image} alt="Profile" className="w-22 h-22 rounded-full object-cover" />
-      ) : (
-        <svg className="w-16 h-16 text-[#c97e6d]" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
-          <circle cx="12" cy="8" r="4" />
-          <path d="M4 20c0-4 8-4 8-4s8 0 8 4" />
-        </svg>
-      )}
-    </div>
-    <div className="flex-1 min-w-0">
-      <div className="font-extrabold text-2xl text-[#4b3e34] truncate mb-2">{session.user?.name || "Account"}</div>
-      <div className="text-sm text-[#bfae9b] break-all mb-6">{session.user?.email}</div>
-      <button
-        onClick={() => signOut({ callbackUrl: "/" })}
-        className="w-full bg-gradient-to-r from-[#c97e6d] to-[#4b3e34] text-white py-3 rounded-2xl font-bold shadow-lg hover:scale-105 hover:shadow-xl transition-all text-lg tracking-wide"
-      >
-        Log out
-      </button>
-    </div>
-  </div>
-)}
-          </div>
+          </>
         ) : (
-          <Link
-            href="/login"
-            className="text-[#4b3e34] font-bold hover:text-[#4b3e34] transition-all duration-300 hover:scale-110 py-2 text-sm rounded-full hover:bg-white/10"
-          >
-            log in
-          </Link>
+          <>
+            <Link href="/login" className="hover:underline">Login</Link>
+            <Link href="/register" className="hover:underline">Register</Link>
+          </>
         )}
-
+      </div>
 
           <button
             className="md:hidden text-[#4b3e34] hover:text-[#4b3e34] transition-colors p-2"

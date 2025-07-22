@@ -51,40 +51,77 @@ export default function Contact() {
           <div className="flex-1 flex flex-col items-center gap-8">
             {/* Picture */}
             <Image
-              src="/profi.jpeg"
-              alt="Mayssa"
-              className="w-48 h-48 object-cover rounded-2xl shadow-lg border-4 border-white bg-[#f7e9d2]"
-            />
-            {/* Contact Infos in cards */}
-<div className="w-full space-y-4">
-  <div className="bg-gradient-to-r from-amber-50 to-orange-50/60 rounded-2xl shadow-lg p-6 flex items-center gap-4 border border-[#e7d8c2] hover:scale-105 transition-transform duration-300">
-    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#f7e9d2] text-[#c97e6d] text-xl font-bold shadow">
-      📧
-    </span>
-    <div>
-      <div className="font-bold text-[#4b3e34] text-sm uppercase tracking-wider">Email</div>
-      <div className="text-[#6d5c4d] break-all text-base">maysart@email.com</div>
+  src="/1.jpg"
+  alt="Mayssa"
+  width={192}  // same as w-48 (48 * 4 = 192px)
+  height={192} // same as h-48
+  className="object-cover rounded-2xl shadow-lg border-4 border-white bg-[#f7e9d2]"
+/>
+
+
+<div className="w-full space-y-3">
+  {/* Instagram */}
+  <a
+    href="https://www.instagram.com/maysart__?igsh=MTdmcHpobWl4NDlxcw%3D%3D&utm_source=qr"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-3 p-4 bg-white rounded-xl shadow hover:shadow-md transition"
+  >
+    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#f7e9d2] text-[#c97e6d] font-bold text-lg">
+      IG
     </div>
-  </div>
-  <div className="bg-gradient-to-r from-amber-50 to-orange-50/60 rounded-2xl shadow-lg p-6 flex items-center gap-4 border border-[#e7d8c2] hover:scale-105 transition-transform duration-300">
-    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#f7e9d2] text-[#c97e6d] text-xl font-bold shadow">
-      📞
-    </span>
     <div>
-      <div className="font-bold text-[#4b3e34] text-sm uppercase tracking-wider">Phone</div>
-      <div className="text-[#6d5c4d] text-base">+216 26 156 190</div>
+      <p className="font-semibold text-gray-700">Instagram</p>
+      <p className="text-gray-600 text-sm">@maysart</p>
     </div>
-  </div>
-  <div className="bg-gradient-to-r from-amber-50 to-orange-50/60 rounded-2xl shadow-lg p-6 flex items-center gap-4 border border-[#e7d8c2] hover:scale-105 transition-transform duration-300">
-    <span className="inline-flex items-center justify-center w-10 h-10 rounded-full bg-[#f7e9d2] text-[#c97e6d] text-xl font-bold shadow">
+  </a>
+
+  {/* Email */}
+  <a
+    href="https://mail.google.com/mail/?view=cm&fs=1&to=maysart@email.com"
+    className="flex items-center gap-3 p-4 bg-white rounded-xl shadow hover:shadow-md transition"
+  >
+    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#f7e9d2] text-[#c97e6d] font-bold text-lg">
+      @
+    </div>
+    <div>
+      <p className="font-semibold text-gray-700">Email</p>
+      <p className="text-gray-600 text-sm break-all">maysart@email.com</p>
+    </div>
+  </a>
+
+  {/* Phone */}
+  <a
+    href="tel:+21626156190"
+    className="flex items-center gap-3 p-4 bg-white rounded-xl shadow hover:shadow-md transition"
+  >
+    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#f7e9d2] text-[#c97e6d] font-bold text-lg">
+      ☎
+    </div>
+    <div>
+      <p className="font-semibold text-gray-700">Phone</p>
+      <p className="text-gray-600 text-sm">+216 26 156 190</p>
+    </div>
+  </a>
+
+  {/* Location */}
+  <a
+    href="https://maps.google.com/?q=Medenine, Tunisia"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="flex items-center gap-3 p-4 bg-white rounded-xl shadow hover:shadow-md transition"
+  >
+    <div className="w-10 h-10 flex items-center justify-center rounded-full bg-[#f7e9d2] text-[#c97e6d] font-bold text-lg">
       📍
-    </span>
-    <div>
-      <div className="font-bold text-[#4b3e34] text-sm uppercase tracking-wider">Location</div>
-      <div className="text-[#6d5c4d] text-base">Medenine, Tunisia</div>
     </div>
-  </div>
+    <div>
+      <p className="font-semibold text-gray-700">Location</p>
+      <p className="text-gray-600 text-sm">Medenine, Tunisia</p>
+    </div>
+  </a>
 </div>
+
+
           </div>
         </div>
       </div>

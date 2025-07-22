@@ -55,6 +55,8 @@ export default function Home() {
       <Image
         src="/art.jpg"
         alt="Ceramic mugs collection"
+        width={800}      
+        height={600}
         className="w-full h-130 object-cover rounded-2xl shadow-lg group-hover:scale-105 transition-transform duration-500"
       />
     </div>
@@ -94,7 +96,7 @@ export default function Home() {
           </div>
 
           {/* Product Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
+          <div  className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-16">
   {[
     {
       name: "CLASSIC",
@@ -153,6 +155,7 @@ export default function Home() {
           <Image
             src={`/${product.image}`}
             alt={product.name}
+            width={800} height={600}
             className="w-full h-48 object-cover group-hover:scale-110 transition-transform duration-500"
           />
           <div className="absolute top-3 right-3 bg-white/80 backdrop-blur-sm rounded-full p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">

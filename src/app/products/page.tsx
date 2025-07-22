@@ -15,7 +15,7 @@ export default function Products() {
           {/* Example product cards, copy your product card design here */}
           {/* ... */}
           <div className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-3xl border border-stone-200 shadow-md">
-            <Image src="/1.jpg" alt="Mug" className="w-full h-48 object-cover rounded-2xl mb-4" />
+            <Image src="/1.jpg" alt="Mug"   width={800}  height={600} className="w-full h-48 object-cover rounded-2xl mb-4" />
             <h3 className="text-lg font-semibold text-[#3d322a] mb-2">CLASSIC</h3>
             <p className="text-[#6d5c4d] mb-2">24.00dt</p>
             <button className="bg-gradient-to-r from-[#4b3e34] to-[#3d322a] text-white px-4 py-2 rounded-xl text-xs transition-all duration-300 hover:scale-105 shadow-md">
